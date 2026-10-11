@@ -1,0 +1,49 @@
+@LeaveSer_HostAddress = http://localhost:5160
+# Paste the Accesstoken returned by Auth1: POST http://localhost:5101/api/Auth/Login
+@token = PASTE_ACCESS_TOKEN_HERE
+
+POST {{LeaveSer_HostAddress}}/api/leave/apply
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "leaveType": "Casual",
+  "fromDate": "2026-10-10",
+  "toDate": "2026-10-11",
+  "reason": "Family function"
+}
+
+###
+
+GET {{LeaveSer_HostAddress}}/api/leave/my-leaves
+Authorization: Bearer {{token}}
+
+###
+
+# Admin only
+GET {{LeaveSer_HostAddress}}/api/leave/pending
+Authorization: Bearer {{token}}
+
+###
+
+# Admin only
+PUT {{LeaveSer_HostAddress}}/api/leave/approve/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "adminRemark": "Approved"
+}
+
+###
+
+# Admin only - remark is required
+PUT {{LeaveSer_HostAddress}}/api/leave/reject/1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "adminRemark": "Project deadline"
+}
+
+###

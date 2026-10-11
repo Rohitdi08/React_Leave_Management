@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "EmployeeLeave\\EmployeeLeave.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "LeaveSer\\LeaveSer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Auth1\\Auth1.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
