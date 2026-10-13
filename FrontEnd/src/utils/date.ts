@@ -6,7 +6,7 @@ export function today(): string {
     return `${d.getFullYear()}-${month}-${day}`;
 }
 
-/* yyyy-mm-dd -> dd-mm-yyyy (format used in the BRD). */
+/* yyyy-mm-dd -> dd-mm-yyyy (display format). */
 export function formatDate(value: string | null): string {
     if (!value) {
         return "-";

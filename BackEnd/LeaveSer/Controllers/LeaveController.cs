@@ -102,6 +102,20 @@ namespace LeaveSer.Controllers
             return Ok(leaves);
         }
 
+        // GET /api/leave/history - leaves already approved or rejected, latest action first
+        [HttpGet("history")]
+        [Authorize(Policy = "AdminOnly")]
+        public IActionResult PreviousHistory()
+        {
+            var leaves = _dbcontext.Leaves
+                    .Where(x => x.Status == LeaveStatus.Rejected ||
+                        x.Status == LeaveStatus.Approved)
+                .OrderByDescending(x => x.ActionDate)
+                .ToList();
+
+            return Ok(leaves);
+        }
+
         // PUT /api/leave/approve/{id}
         [HttpPut("approve/{id:int}")]
         [Authorize(Policy = "AdminOnly")]

@@ -144,3 +144,4 @@ E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\LeaveSer\ob
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\LeaveSer\obj\Debug\net8.0\LeaveSer.pdb
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\LeaveSer\obj\Debug\net8.0\LeaveSer.genruntimeconfig.cache
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\LeaveSer\obj\Debug\net8.0\ref\LeaveSer.dll
+E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\LeaveSer\obj\Debug\net8.0\LeaveSer.sourcelink.json

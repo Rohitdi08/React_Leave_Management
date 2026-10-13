@@ -9,7 +9,8 @@ function AppProvider({ children }: { children: ReactNode }) {
     const [state, dispatch] = useReducer(appReducer, null, () => ({
         currentUser: getSession()?.user ?? null,
         users: [],
-        leaves: []
+        leaves: [],
+        history: []
     }));
 
     /* When a token can no longer be refreshed, http.ts clears it and we return to the login page. */

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LeaveSer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+399a6115fb088ae4ce18a84da97947fb1acd0995")]
 [assembly: System.Reflection.AssemblyProductAttribute("LeaveSer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LeaveSer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

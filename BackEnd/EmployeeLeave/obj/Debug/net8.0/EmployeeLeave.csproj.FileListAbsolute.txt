@@ -144,3 +144,4 @@ E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\EmployeeLea
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\EmployeeLeave\obj\Debug\net8.0\EmployeeLeave.pdb
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\EmployeeLeave\obj\Debug\net8.0\EmployeeLeave.genruntimeconfig.cache
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\EmployeeLeave\obj\Debug\net8.0\ref\EmployeeLeave.dll
+E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\EmployeeLeave\obj\Debug\net8.0\EmployeeLeave.sourcelink.json

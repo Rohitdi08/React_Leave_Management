@@ -12,7 +12,7 @@ function App() {
     const [loginMessage, setLoginMessage] = useState("");
 
     const renderContent = () => {
-        /* Role-based routing (BRD 5.2): Employee -> Employee Dashboard, Admin -> Admin Dashboard. */
+        /* Role-based routing: Employee -> Employee Dashboard, Admin -> Admin Dashboard. */
         if (state.currentUser) {
             return state.currentUser.role === "Admin"
                 ? <AdminDashboard />

@@ -26,6 +26,12 @@ export async function getPendingLeaves(): Promise<Leave[]> {
     return leaves.map(toLeave);
 }
 
+/* GET /api/leave/history - Admin only; approved/rejected leaves, latest action first. */
+export async function getPreviousHistory(): Promise<Leave[]> {
+    const leaves = await apiFetch<LeaveDto[]>("/api/leave/history");
+    return leaves.map(toLeave);
+}
+
 /* PUT /api/leave/approve/{id} - Admin only; remark optional. Returns the updated leave. */
 export async function approveLeave(leaveId: number, remark: string): Promise<Leave> {
     const result = await apiFetch<{ message: string; leave: LeaveDto }>(`/api/leave/approve/${leaveId}`, {

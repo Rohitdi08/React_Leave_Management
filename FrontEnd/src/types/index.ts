@@ -1,4 +1,4 @@
-/* Mirrors the BRD "User" table (section 7.1), as returned by GET /api/employee (no password). */
+/* User as returned by GET /api/employee (no password). */
 export type Role = "Employee" | "Admin";
 
 export type User = {
@@ -12,7 +12,6 @@ export type User = {
     createdDate: string; // yyyy-mm-dd
 };
 
-/* Mirrors the BRD "Leave" table (section 7.2). */
 export type LeaveStatus = "Pending" | "Approved" | "Rejected";
 
 export type Leave = {

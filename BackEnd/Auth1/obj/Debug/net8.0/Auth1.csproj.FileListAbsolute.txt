@@ -144,3 +144,4 @@ E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\Auth1\obj\D
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\Auth1\obj\Debug\net8.0\Auth1.pdb
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\Auth1\obj\Debug\net8.0\Auth1.genruntimeconfig.cache
 E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\Auth1\obj\Debug\net8.0\ref\Auth1.dll
+E:\Persional\Class Work\DotnetCoreApi\React\Leave_Management\BackEnd\Auth1\obj\Debug\net8.0\Auth1.sourcelink.json

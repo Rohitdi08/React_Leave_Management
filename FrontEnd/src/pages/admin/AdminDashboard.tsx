@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { getEmployees } from "../../api/employeeApi";
 import { errorMessage } from "../../api/http";
-import { getPendingLeaves } from "../../api/leaveApi";
+import { getPendingLeaves, getPreviousHistory } from "../../api/leaveApi";
 import StatCard from "../../components/StatCard";
 import Tabs from "../../components/Tabs";
 import { useApp } from "../../store/AppContext";
 import EmployeeList from "./EmployeeList";
 import LeaveRequests from "./LeaveRequests";
+import PreviousHistory from "./PreviousHistory";
 
-type AdminTab = "leaves" | "employees";
+type AdminTab = "leaves" | "employees" | "history";
 
 function AdminDashboard() {
     const { state, dispatch } = useApp();
@@ -17,14 +18,15 @@ function AdminDashboard() {
     const [loadError, setLoadError] = useState("");
     const [reloadKey, setReloadKey] = useState(0);
 
-    /* GET /api/employee (EmployeeLeave) + GET /api/leave/pending (LeaveSer), in parallel. */
+    /* GET /api/employee (EmployeeLeave) + GET /api/leave/pending and /api/leave/history (LeaveSer), in parallel. */
     useEffect(() => {
         let ignore = false;
-        Promise.all([getEmployees(), getPendingLeaves()])
-            .then(([users, leaves]) => {
+        Promise.all([getEmployees(), getPendingLeaves(), getPreviousHistory()])
+            .then(([users, leaves, history]) => {
                 if (ignore) return;
                 dispatch({ type: "SET_USERS", users });
                 dispatch({ type: "SET_LEAVES", leaves });
+                dispatch({ type: "SET_HISTORY", history });
             })
             .catch((err: unknown) => {
                 if (!ignore) setLoadError(errorMessage(err));
@@ -64,7 +66,8 @@ function AdminDashboard() {
             <Tabs
                 tabs={[
                     { key: "leaves", label: "Leave Requests" },
-                    { key: "employees", label: "Employees" }
+                    { key: "employees", label: "Employees" },
+                    { key: "history", label: "Previous History" }
                 ]}
                 active={tab}
                 onChange={setTab}
@@ -79,9 +82,9 @@ function AdminDashboard() {
                 </div>
             )}
 
-            {tab === "leaves"
-                ? <LeaveRequests loading={loading} onRefresh={reload} />
-                : <EmployeeList employees={employees} loading={loading} />}
+            {tab === "leaves" && <LeaveRequests loading={loading} onRefresh={reload} />}
+            {tab === "employees" && <EmployeeList employees={employees} loading={loading} />}
+            {tab === "history" && <PreviousHistory loading={loading} onRefresh={reload} />}
         </div>
     );
 }
